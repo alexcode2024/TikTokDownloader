@@ -399,12 +399,40 @@ class TikTokDownloader:
     async def check_settings(self, restart=True):
         if restart:
             await self.parameter.close_client()
+        settings_data = self.settings.read()
+        
+        # 检查Cookie读取状态并打印
+        cookie_status = settings_data.get("_cookie_status", {})
+        if cookie_status:
+            if cookie_status.get("success"):
+                self.console.info(
+                    _("[Cookie] 读取成功: {message}").format(message=cookie_status.get("message", ""))
+                )
+            else:
+                self.console.warning(
+                    _("[Cookie] 读取状态: {message}").format(message=cookie_status.get("message", ""))
+                )
+        else:
+            # 如果没有从文件读取，检查settings.json中是否有cookie
+            cookie = settings_data.get("cookie", "")
+            if cookie:
+                self.console.info(
+                    _("[Cookie] 使用 settings.json 中的 Cookie")
+                )
+            else:
+                self.console.warning(
+                    _("[Cookie] 未找到 Cookie 配置，请设置 Cookie 后重新运行程序")
+                )
+        
+        # 移除临时状态信息
+        settings_data.pop("_cookie_status", None)
+        
         self.parameter = Parameter(
             self.settings,
             self.cookie,
             logger=self.logger,
             console=self.console,
-            **self.settings.read(),
+            **settings_data,
             recorder=self.recorder,
         )
         MigrateFolder(self.parameter).compatible()

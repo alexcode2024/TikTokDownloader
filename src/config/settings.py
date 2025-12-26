@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING
 
 from ..custom import USERAGENT
 from ..translation import _
+from ..tools import cookie_str_to_dict
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -147,6 +148,8 @@ class Settings:
         self.file = "settings.json"
         self.path = root.joinpath(self.file)  # 配置文件
         self.console = console
+        # cookies文件路径：项目根目录下的cookies.txt
+        self.cookies_file = root.parent.joinpath("cookies.txt")
 
     def __create(self) -> dict:
         """创建默认配置文件"""
@@ -189,6 +192,8 @@ class Settings:
                 )
         if update:
             self.update(data)
+        # 从cookies文件读取Cookie（如果settings.json中的cookie为空）
+        data = self.__load_cookies_from_file(data)
         return data
 
     def update(self, settings: dict | SimpleNamespace):
@@ -230,3 +235,47 @@ class Settings:
             old := self.root.parent.joinpath(self.file)
         ).exists() and not self.path.exists():
             move(old, self.path)
+    
+    def __load_cookies_from_file(self, data: dict) -> dict:
+        """从cookies.txt文件读取Cookie，优先使用文件中的cookie"""
+        cookie_status = {"success": False, "message": "", "source": ""}
+        
+        if not self.cookies_file.exists():
+            cookie_status["message"] = _("cookies.txt 文件不存在，使用 settings.json 中的 Cookie")
+            cookie_status["source"] = "settings.json"
+            data["_cookie_status"] = cookie_status
+            return data
+        
+        try:
+            with self.cookies_file.open("r", encoding=self.encode) as f:
+                cookie_content = f.read().strip()
+            
+            if not cookie_content:
+                cookie_status["message"] = _("cookies.txt 文件为空，使用 settings.json 中的 Cookie")
+                cookie_status["source"] = "settings.json"
+                data["_cookie_status"] = cookie_status
+                return data
+            
+            # 解析cookie字符串为字典
+            cookie_dict = cookie_str_to_dict(cookie_content)
+            
+            if cookie_dict:
+                # 优先使用文件中的cookie，覆盖settings.json中的值
+                cookie_str = "; ".join([f"{k}={v}" for k, v in cookie_dict.items()])
+                data["cookie"] = cookie_str
+                cookie_status["success"] = True
+                cookie_status["message"] = _("已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中")
+                cookie_status["source"] = "cookies.txt"
+                self.console.info(cookie_status["message"])
+            else:
+                cookie_status["message"] = _("cookies.txt 文件内容格式无效，无法解析 Cookie，使用 settings.json 中的 Cookie")
+                cookie_status["source"] = "settings.json"
+                self.console.warning(cookie_status["message"])
+                
+        except Exception as e:
+            cookie_status["message"] = _("读取 cookies.txt 文件失败: {error}，使用 settings.json 中的 Cookie").format(error=str(e))
+            cookie_status["source"] = "settings.json"
+            self.console.warning(cookie_status["message"])
+        
+        data["_cookie_status"] = cookie_status
+        return data

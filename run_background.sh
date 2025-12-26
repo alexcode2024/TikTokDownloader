@@ -69,6 +69,27 @@ start_service() {
             echo "   API URL: http://0.0.0.0:5555"
             echo "   API Docs: http://0.0.0.0:5555/docs"
         fi
+        
+        # 检查Cookie读取状态
+        sleep 1
+        if [ -f "$LOG_FILE" ]; then
+            cookie_status=$(grep -i "\[Cookie\]" "$LOG_FILE" | tail -1)
+            if [ -n "$cookie_status" ]; then
+                echo "   Cookie Status: $cookie_status"
+            else
+                # 检查cookies.txt文件是否存在
+                cookies_file="$SCRIPT_DIR/cookies.txt"
+                if [ -f "$cookies_file" ]; then
+                    if [ -s "$cookies_file" ]; then
+                        echo "   Cookie Status: [INFO] cookies.txt 文件存在且非空"
+                    else
+                        echo "   Cookie Status: [WARNING] cookies.txt 文件存在但为空"
+                    fi
+                else
+                    echo "   Cookie Status: [INFO] cookies.txt 文件不存在，使用 settings.json 中的 Cookie"
+                fi
+            fi
+        fi
     else
         echo "[ERROR] Service failed to start, please check error log: $ERROR_LOG"
         rm -f "$PID_FILE"

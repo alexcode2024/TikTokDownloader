@@ -635,6 +635,8 @@ class TikTok:
             earliest,
             latest,
             pages,
+            max_count=kwargs.get('max_count'),
+            sort=kwargs.get('sort', 0),
         ).run()
 
     async def _get_account_data_tiktok(

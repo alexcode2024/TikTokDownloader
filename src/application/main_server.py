@@ -227,7 +227,9 @@ class APIServer(TikTok):
                 - **latest**: 作品最晚发布日期；可选参数
                 - **pages**: 最大请求次数，仅对请求账号喜欢页数据有效；可选参数
                 - **cursor**: 可选参数
-                - **count**: 可选参数
+                - **count**: 每次请求返回的作品数量；可选参数，默认值：18
+                - **max_count**: 最大返回作品总数量；可选参数，None表示不限制
+                - **sort**: 排序方式；可选参数，0=按发布日期倒序（默认），1=按点赞数倒序
                 """)
             ),
             tags=[_("抖音")],
@@ -681,9 +683,35 @@ class APIServer(TikTok):
         extract: Account | AccountTiktok,
         tiktok=False,
     ):
+        # 检查 sec_user_id 是否是 URL 格式，如果是则提取 sec_user_id
+        sec_user_id = extract.sec_user_id
+        if sec_user_id.startswith(("http://", "https://")):
+            # 从 URL 中提取 sec_user_id
+            extracted_id = await self.check_sec_user_id(sec_user_id, tiktok)
+            if not extracted_id:
+                return DataResponse(
+                    message=_("无法从 URL 中提取账号 sec_user_id，请检查 URL 是否正确"),
+                    data=None,
+                    params=extract.model_dump(),
+                )
+            sec_user_id = extracted_id
+        
+        # 检查该账号是否已经存在于 mapping_data 表中
+        if mapping_data := await self.database.read_mapping_data(sec_user_id):
+            name = mapping_data['NAME']
+            mark = mapping_data['MARK']
+            return DataResponse(
+                message=_("该账号已存在，无需重复添加。账号昵称：{name}，标识：{mark}").format(
+                    name=name,
+                    mark=mark
+                ),
+                data=None,
+                params=extract.model_dump(),
+            )
+        
         if data := await self.deal_account_detail(
             0,
-            extract.sec_user_id,
+            sec_user_id,
             tab=extract.tab,
             earliest=extract.earliest,
             latest=extract.latest,
@@ -695,6 +723,8 @@ class APIServer(TikTok):
             tiktok=tiktok,
             cursor=extract.cursor,
             count=extract.count,
+            max_count=extract.max_count,
+            sort=extract.sort,
         ):
             return self.success_response(extract, data)
         return self.failed_response(extract)

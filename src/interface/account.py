@@ -25,6 +25,8 @@ class Account(API):
         pages: int = None,
         cursor=0,
         count=18,
+        max_count: int = None,
+        sort: int = 0,
         *args,
         **kwargs,
     ):
@@ -38,6 +40,9 @@ class Account(API):
         self.earliest: date = self.check_earliest(earliest)
         self.cursor = cursor
         self.count = count
+        self.max_count = max_count  # 最大返回作品数量
+        self.sort = sort  # 排序方式：0=按发布日期倒序，1=按点赞数倒序
+        self.total_count = 0  # 已获取的作品数量
         self.text = _("账号喜欢作品") if self.favorite else _("账号发布作品")
 
     async def run(
@@ -149,6 +154,12 @@ class Account(API):
             *args,
             **kwargs,
         )
+        
+        # 如果需要排序
+        if self.sort == 1 and self.response:
+            # 按点赞数倒序排列
+            self.response.sort(key=lambda x: x.get('statistics', {}).get('digg_count', 0), reverse=True)
+        
         self.summary_works()
 
     async def early_stop(self):
@@ -158,6 +169,10 @@ class Account(API):
             and self.earliest
             > datetime.fromtimestamp(max(int(self.cursor) / 1000, 0)).date()
         ):
+            self.finished = True
+        
+        # 检查是否达到最大数量限制
+        if self.max_count is not None and self.total_count >= self.max_count:
             self.finished = True
 
     def generate_params(
@@ -254,8 +269,23 @@ class Account(API):
                 self.finished = True
             else:
                 self.cursor = data_dict[cursor]
+                
+                # 如果设置了max_count，限制返回的数据数量
+                if self.max_count is not None:
+                    remaining = self.max_count - self.total_count
+                    if remaining <= 0:
+                        self.finished = True
+                        return
+                    # 只取需要的数量
+                    d = d[:remaining]
+                    self.total_count += len(d)
+                
                 self.append_response(d)
                 self.finished = not data_dict[has_more]
+                
+                # 如果已达到最大数量，停止获取
+                if self.max_count is not None and self.total_count >= self.max_count:
+                    self.finished = True
         except KeyError:
             if data_dict.get("status_code") == 0:
                 self.log.warning(_("配置文件 cookie 参数未登录，数据获取已提前结束"))
