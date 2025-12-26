@@ -4,6 +4,9 @@ from platform import system
 from shutil import move
 from types import SimpleNamespace
 from typing import TYPE_CHECKING
+import os
+
+from dotenv import load_dotenv
 
 from ..custom import USERAGENT
 from ..translation import _
@@ -148,8 +151,10 @@ class Settings:
         self.file = "settings.json"
         self.path = root.joinpath(self.file)  # 配置文件
         self.console = console
-        # cookies文件路径：项目根目录下的cookies.txt
-        self.cookies_file = root.parent.joinpath("cookies.txt")
+        # .env 文件路径：项目根目录
+        self.env_file = root.parent.joinpath(".env")
+        # 加载 .env 文件
+        load_dotenv(self.env_file)
 
     def __create(self) -> dict:
         """创建默认配置文件"""
@@ -237,45 +242,45 @@ class Settings:
             move(old, self.path)
     
     def __load_cookies_from_file(self, data: dict) -> dict:
-        """从cookies.txt文件读取Cookie，优先使用文件中的cookie"""
+        """从 .env 文件读取 Cookie，优先使用环境变量中的 cookie"""
         cookie_status = {"success": False, "message": "", "source": ""}
         
-        if not self.cookies_file.exists():
-            cookie_status["message"] = _("cookies.txt 文件不存在，使用 settings.json 中的 Cookie")
-            cookie_status["source"] = "settings.json"
-            data["_cookie_status"] = cookie_status
-            return data
+        # 尝试从环境变量读取抖音 Cookie
+        douyin_cookie = os.getenv("DOUYIN_COOKIE", "").strip()
+        tiktok_cookie = os.getenv("TIKTOK_COOKIE", "").strip()
         
-        try:
-            with self.cookies_file.open("r", encoding=self.encode) as f:
-                cookie_content = f.read().strip()
-            
-            if not cookie_content:
-                cookie_status["message"] = _("cookies.txt 文件为空，使用 settings.json 中的 Cookie")
-                cookie_status["source"] = "settings.json"
-                data["_cookie_status"] = cookie_status
-                return data
-            
-            # 解析cookie字符串为字典
-            cookie_dict = cookie_str_to_dict(cookie_content)
+        # 处理抖音 Cookie
+        if douyin_cookie:
+            # 解析 cookie 字符串为字典
+            cookie_dict = cookie_str_to_dict(douyin_cookie)
             
             if cookie_dict:
-                # 优先使用文件中的cookie，覆盖settings.json中的值
+                # 优先使用环境变量中的 cookie，覆盖 settings.json 中的值
                 cookie_str = "; ".join([f"{k}={v}" for k, v in cookie_dict.items()])
                 data["cookie"] = cookie_str
                 cookie_status["success"] = True
-                cookie_status["message"] = _("已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中")
-                cookie_status["source"] = "cookies.txt"
+                cookie_status["message"] = _("已从 .env 文件读取抖音 Cookie 并应用到配置中")
+                cookie_status["source"] = ".env"
                 self.console.info(cookie_status["message"])
             else:
-                cookie_status["message"] = _("cookies.txt 文件内容格式无效，无法解析 Cookie，使用 settings.json 中的 Cookie")
+                cookie_status["message"] = _(".env 文件中 DOUYIN_COOKIE 格式无效，使用 settings.json 中的 Cookie")
                 cookie_status["source"] = "settings.json"
                 self.console.warning(cookie_status["message"])
-                
-        except Exception as e:
-            cookie_status["message"] = _("读取 cookies.txt 文件失败: {error}，使用 settings.json 中的 Cookie").format(error=str(e))
+        else:
+            # 检查 .env 文件是否存在
+            if self.env_file.exists():
+                cookie_status["message"] = _(".env 文件存在但未配置 DOUYIN_COOKIE，使用 settings.json 中的 Cookie")
+            else:
+                cookie_status["message"] = _(".env 文件不存在，使用 settings.json 中的 Cookie")
             cookie_status["source"] = "settings.json"
-            self.console.warning(cookie_status["message"])
+        
+        # 处理 TikTok Cookie
+        if tiktok_cookie:
+            cookie_dict_tiktok = cookie_str_to_dict(tiktok_cookie)
+            if cookie_dict_tiktok:
+                cookie_str_tiktok = "; ".join([f"{k}={v}" for k, v in cookie_dict_tiktok.items()])
+                data["cookie_tiktok"] = cookie_str_tiktok
+                self.console.info(_("已从 .env 文件读取 TikTok Cookie 并应用到配置中"))
         
         data["_cookie_status"] = cookie_status
         return data

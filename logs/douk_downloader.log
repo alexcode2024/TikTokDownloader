@@ -1022,3 +1022,368 @@ INFO:     188.253.117.46:42354 - "GET /docs HTTP/1.1" 200 OK
 INFO:     188.253.117.46:38576 - "GET /openapi.json HTTP/1.1" 200 OK
 INFO:     188.253.117.46:38576 - "GET /docs HTTP/1.1" 200 OK
 INFO:     188.253.117.46:38576 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     162.216.150.175:58278 - "GET / HTTP/1.1" 307 Temporary Redirect
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:41228 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:41234 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35282 - "GET /openapi.json HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:43386 - "GET /docs HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     188.253.117.46:32626 - "POST /douyin/account HTTP/1.1" 500 Internal Server Error
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:36546 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:36552 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36560 - "GET /openapi.json HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+共获取到 5 个账号发布作品
+INFO:     188.253.117.46:62380 - "POST /douyin/account HTTP/1.1" 200 OK
+共获取到 5 个账号发布作品
+INFO:     188.253.117.46:9754 - "POST /douyin/account HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+正在更新抖音参数，请稍等...
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:39108 - "GET /docs HTTP/1.1" 200 OK
+INFO:     79.124.49.130:50480 - "CONNECT www.google.com%3A443 HTTP/1.1" 404 Not Found
+共获取到 5 个账号发布作品
+INFO:     188.253.117.46:44438 - "POST /douyin/account HTTP/1.1" 500 Internal Server Error
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+共获取到 5 个账号发布作品
+INFO:     188.253.117.46:56764 - "POST /douyin/account HTTP/1.1" 500 Internal Server Error
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:56356 - "GET /docs HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+共获取到 5 个账号发布作品
+INFO:     188.253.117.46:8246 - "POST /douyin/account HTTP/1.1" 500 Internal Server Error
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+cookies.txt 文件内容格式无效，无法解析 Cookie，使用 settings.json 中的 Cookie
+[Cookie] 读取状态: cookies.txt 文件内容格式无效，无法解析 Cookie，使用 
+settings.json 中的 Cookie
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:45112 - "GET /docs HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 cookies.txt 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+开始处理账号
+共获取到 5 个账号发布作品
+开始提取作品数据
+昵称/标题：大胡子李俊怀；标识：大胡子李俊怀；ID：98153518666
+筛选处理后作品数量: 5
+INFO:     188.253.117.46:55084 - "POST /douyin/account HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:52204 - "GET /docs HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+开始处理账号
+共获取到 4 个账号发布作品
+筛选处理后作品数量: 4
+INFO:     188.253.117.46:55004 - "POST /douyin/account HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+INFO:     127.0.0.1:40426 - "GET /docs HTTP/1.1" 200 OK
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+            DouK-Downloader V5.8 Beta             
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+项目地址: https://github.com/JoeanAmier/TikTokDownloader
+项目文档: https://github.com/JoeanAmier/TikTokDownloader/wiki/Documentation
+开源许可: GNU General Public License v3.0
+
+已从 .env 文件读取抖音 Cookie 并应用到配置中
+[Cookie] 读取成功: 已从 .env 文件读取抖音 Cookie 并应用到配置中
+访问 http://127.0.0.1:5555/docs 或者 http://127.0.0.1:5555/redoc 可以查阅 API 
+模式说明文档！
+正在更新抖音参数，请稍等...
+抖音参数更新完毕！
+配置文件 cookie_tiktok 参数未设置，TikTok 平台功能可能无法正常使用
+开始处理账号
+共获取到 4 个账号发布作品
+开始提取作品数据
+昵称/标题：大胡子李俊怀；标识：大胡子李俊怀；ID：98153518666
+筛选处理后作品数量: 4
+INFO:     188.253.117.46:60138 - "POST /douyin/account HTTP/1.1" 200 OK

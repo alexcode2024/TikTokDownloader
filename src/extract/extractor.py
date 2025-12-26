@@ -258,6 +258,8 @@ class Extractor:
         else:
             extra = ""
         item["extra"] = extra
+        # 提取 is_top 字段（置顶标识）
+        item["is_top"] = self.safe_extract(data, "is_top", 0)
 
     def __extract_extra_info_tiktok(
         self,
@@ -266,6 +268,8 @@ class Extractor:
     ):
         # TODO: 尚未适配 TikTok 额外信息
         item["extra"] = ""
+        # 提取 is_top 字段（置顶标识）
+        item["is_top"] = self.safe_extract(data, "is_top", 0)
 
     def __extract_commodity_data(
         self,

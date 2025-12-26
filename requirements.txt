@@ -28,3 +28,4 @@ rookiepy==0.5.6
     # via douk-downloader (pyproject.toml)
 uvicorn==0.35.0
     # via douk-downloader (pyproject.toml)
+python-dotenv==1.0.0
